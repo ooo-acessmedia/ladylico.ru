@@ -2818,6 +2818,7 @@ body {
   background: #ED1B24;
   width: 170px !important;
   height: auto !important;
+  border-bottom: 2px solid white;
 }
 .special-link:hover {
   font-size: 22px !important;
@@ -2827,7 +2828,7 @@ body {
   text-decoration: none;
 }
 .special-link.sertificates {
-  bottom: -50px;
+  bottom: -53px;
 }
 .main-sections {
   display: -webkit-flex;
