@@ -1,0 +1,170 @@
+.footer-wrap {
+  background: url("../../img/bg-footer-wrap.jpg") no-repeat;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+  padding-top: 45px;
+  padding-bottom: 60px;
+
+  /*@media screen and (max-width: 1199px) {
+    justify-content: center;
+  }*/
+}
+
+.footer-copyrights {
+  padding-left: 100px;
+  position: relative;
+
+  /*@media screen and (max-width: 1199px) {
+    padding-left: 0;
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }*/
+
+  > div {
+    &:nth-child(1) {
+      font-size: 18px;
+      color: white;
+    }
+
+    &:nth-child(2) {
+      color: white;
+
+      span:nth-child(1) {
+        font-size: 28px;
+      }
+
+      span:nth-child(2) {
+        font-size: 18px;
+
+        a {
+          color: white;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      font-size: 18px;
+      color: #3d393e;
+    }
+  }
+
+  .footer-copyrights-sitemap {
+    width: 30px;
+    height: 26px;
+    background: url("../../img/icon-sitemap.png") no-repeat;
+    position: absolute;
+    right: 85px;
+    top: 0;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.footer-contacts {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  flex-flow: row wrap;
+
+  /*@media screen and (max-width: 480px) {
+    justify-content: flex-start;
+  }*/
+
+  .footer-contacts-address {
+
+    /*@media screen and (max-width: 480px) {
+      justify-content: center;
+    }*/
+
+    .footer-address-title {
+      font-size: 18px;
+      color: #ff9c00;
+    }
+
+    .footer-address-text {
+      font-size: 18px;
+      color: white;
+    }
+  }
+
+  .footer-contacts-phone {
+    margin-left: 15px;
+
+    /*@media screen and (max-width: 480px) {
+      margin-left: 0;
+    }*/
+
+    .footer-phone-title {
+      font-size: 18px;
+      color: #ff9c00;
+    }
+
+    .footer-phone-text {
+      font-size: 18px;
+      color: white;
+
+      div:nth-child(2) {
+        a {
+          font-size: 18px;
+          color: #3d5cbf;
+        }
+      }
+    }
+  }
+
+  .footer-contacts-map {
+    background: url("../../img/icon-map.png") no-repeat;
+    width: 46px;
+    height: 27px;
+    position: absolute;
+    left: 85px;
+    top: -5px;
+
+    /*@media screen and (max-width: 480px) {
+      display: none;
+    }*/
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.footer-company {
+  width: 280px;
+
+  .footer-company-title {
+    font-size: 18px;
+    color: white;
+    text-align: right;
+  }
+
+  .footer-company-logo {
+    background: url("../../img/icon-accessmedia-logo.png") no-repeat;
+    width: 276px;
+    height: 45px;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    /*@media screen and (max-width: 480px) {
+      width: auto;
+      background-size: 100% auto;
+    }*/
+  }
+}

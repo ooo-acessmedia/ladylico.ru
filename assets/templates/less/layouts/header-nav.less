@@ -1,0 +1,109 @@
+//header-nav
+
+.header-nav-wrap {
+  background: url("../../img/bg-header-nav.png") no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.header-nav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 17px;
+  padding-left: 50px;
+}
+
+.header-nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+  margin-left: 55px;
+
+  /*@media screen and (max-width: 991px) {
+    justify-content: space-around;
+  }
+
+  @media screen and (max-width: 465px) {
+    padding-top: 70px;
+    margin-left: 0;
+  }*/
+
+  li {
+    width: 155px;
+    height: 44px;
+    border: 1px solid #6d616f;
+    border-left: none;
+    margin-right: 40px;
+    position: relative;
+    margin-bottom: 10px;
+
+    &:nth-child(1):before {
+      position: absolute;
+      left: -15px;
+      top: -2px;
+      content: '';
+      display: block;
+      width: 44px;
+      height: 47px;
+      background: url("../../img/icon-studio.png") no-repeat;
+    }
+
+    &:nth-child(2):before {
+      position: absolute;
+      left: -15px;
+      top: -2px;
+      content: '';
+      display: block;
+      width: 44px;
+      height: 47px;
+      background: url("../../img/icon-school.png") no-repeat;
+    }
+
+    &:nth-child(3):before {
+      position: absolute;
+      left: -15px;
+      top: -2px;
+      content: '';
+      display: block;
+      width: 44px;
+      height: 47px;
+      background: url("../../img/icon-shop.png") no-repeat;
+    }
+
+    &:nth-child(4):before {
+      position: absolute;
+      left: -20px;
+      top: -2px;
+      content: '';
+      display: block;
+      width: 44px;
+      height: 44px;
+      background: url("../../img/icon-expo.png") no-repeat;
+    }
+
+    a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      font-size: 26px;
+      color: white;
+      text-decoration: none;
+
+      /*@media screen and (max-width: 450px) {
+        font-size: 22px;
+      }
+
+      &:hover {
+        background: url("../../img/bg-header-nav-active.png") no-repeat;
+      }*/
+    }
+  }
+
+}
