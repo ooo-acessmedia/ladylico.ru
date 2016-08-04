@@ -2811,14 +2811,14 @@ body {
   text-shadow: 1px 1px black;
   text-decoration: none;
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
   left: -40px;
   display: none;
   padding: 10px 20px;
   background: #ED1B24;
   width: 170px !important;
   height: auto !important;
-  border-bottom: 2px solid white;
+  border: 2px solid white;
 }
 .special-link:hover {
   font-size: 22px !important;
@@ -2828,7 +2828,7 @@ body {
   text-decoration: none;
 }
 .special-link.sertificates {
-  bottom: -53px;
+  bottom: -63px;
 }
 .main-sections {
   display: -webkit-flex;
@@ -4962,6 +4962,7 @@ body {
   -webkit-transform: rotate(0);
       -ms-transform: rotate(0);
           transform: rotate(0);
+  display: none;
 }
 /*Header Flag*/
 /*Action popup*/
