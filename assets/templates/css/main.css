@@ -3999,6 +3999,18 @@ body {
     justify-content: center;
   }*/
 }
+.school-direction .text-page-header,
+.studio-direction .text-page-header {
+  font-size: 34px;
+  color: white;
+  background: url("../img/text-page-header-bg.png") no-repeat;
+  background-size: 100% 100%;
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 0;
+  font-weight: normal;
+  border: 4px solid white;
+}
 .text-page-content-block {
   -webkit-flex-grow: 1;
       -ms-flex-positive: 1;
@@ -5074,6 +5086,216 @@ body {
   color: white;
 }
 /*About page*/
+/*Studio and Leaning special output*/
+.special-output .sertificates-title {
+  font-size: 20px;
+  color: white;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: url("../img/sertificates-title-bg.png") no-repeat;
+  background-size: 100% 100%;
+  border: 4px solid white;
+  border-top: none;
+  padding: 15px 20px;
+}
+.special-output .education-block {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: url("../img/education-block-bg.png") no-repeat;
+  background-size: 100% 100%;
+  border: 4px solid white;
+  border-top: none;
+}
+.special-output .education-block .course-list {
+  width: 545px;
+  padding-top: 10px;
+}
+.special-output .education-block .course-list ol,
+.special-output .education-block .course-list ul {
+  padding: 0;
+  margin: 0;
+  list-style-position: inside;
+  margin-left: 30px;
+}
+.special-output .education-block .sertificates-block {
+  width: 435px;
+  padding-top: 15px;
+  padding-left: 60px;
+  position: relative;
+}
+.special-output .education-block .sertificates-block .owl-prev {
+  position: absolute;
+  left: -50px;
+  top: 75px;
+  width: 30px;
+  height: 35px;
+  background: url("../img/sertificates-slider-left-bg.png") no-repeat;
+}
+.special-output .education-block .sertificates-block .owl-next {
+  position: absolute;
+  right: 60px;
+  top: 75px;
+  width: 30px;
+  height: 35px;
+  background: url("../img/sertificates-slider-right-bg.png") no-repeat;
+}
+.special-output .education-block .sertificates-block .gallery-teaser-item {
+  width: auto;
+}
+.special-output .education-block .sertificates-block .gallery-teaser-item img {
+  width: auto;
+}
+.special-output .description-block {
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.special-output .shedule-block {
+  position: relative;
+  margin-top: 50px;
+  border: 4px solid white;
+  margin-bottom: 70px;
+}
+.special-output .shedule-block:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -45px;
+  top: -45px;
+  width: 213px;
+  height: 259px;
+  background: url("../img/shedule-block-img.png") no-repeat;
+}
+.special-output .shedule-block .shedule-title {
+  padding-left: 165px;
+  font-size: 20px;
+  color: white;
+  background: url("../img/sertificates-title-bg.png") no-repeat;
+  background-size: 100% 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 4px solid white;
+}
+.special-output .shedule-block .shedule-text {
+  font-size: 18px;
+  color: #262626;
+  padding-left: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: url("../img/shedule-text-bg.png") no-repeat;
+  background-size: 100% 100%;
+}
+.special-output .shedule-block .shedule-text ul,
+.special-output .shedule-block .shedule-text ol {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.special-output .shedule-block .shedule-text ul > li,
+.special-output .shedule-block .shedule-text ol > li {
+  width: 50%;
+}
+.special-output .specialist-block .specialist-title {
+  padding-left: 10px;
+  font-size: 20px;
+  color: white;
+  background: url("../img/sertificates-title-bg.png") no-repeat;
+  background-size: 100% 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 4px solid white;
+}
+.special-output .specialist-block .specialist-text {
+  background: url("../img/specialist-text-bg.png") no-repeat;
+  background-size: 100% 100%;
+  padding: 10px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+.special-output .specialist-block .specialist-text .specialist-item {
+  width: auto;
+  margin-right: 0;
+  border: none;
+}
+.special-output .specialist-block .specialist-text .specialist-item > a {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+.special-output .specialist-block .specialist-text .specialist-item .image {
+  width: 180px;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  border: 1px solid white;
+}
+.special-output .specialist-block .specialist-text .specialist-item .image img {
+  width: 100%;
+  max-height: 267px;
+}
+.special-output .specialist-block .specialist-text .specialist-item .right {
+  -webkit-flex-shrink: 1;
+      -ms-flex-negative: 1;
+          flex-shrink: 1;
+  -webkit-flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  width: 260px;
+  padding-left: 13px;
+}
+.special-output .specialist-block .specialist-text .specialist-item .right > .title {
+  font-size: 20px;
+  color: white;
+  text-align: left;
+}
+.special-output .specialist-block .specialist-text .specialist-item .right > .content {
+  font-size: 18px;
+  color: white;
+  text-align: left;
+}
+.studio-special-output .specialist-block {
+  border-right: 4px solid white;
+  border-left: 4px solid white;
+  margin-top: 40px;
+}
+.studio-special-output .specialist-block .specialist-item .image {
+  width: 140px !important;
+}
+.studio-special-output .specialist-block .specialist-item .right {
+  width: 180px !important;
+}
 /*Modules*/
 /*States*/
 .is-visible {

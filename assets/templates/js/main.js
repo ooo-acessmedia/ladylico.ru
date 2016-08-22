@@ -6,6 +6,18 @@
         console.log(msg);
     };
 
+    // Слайдер для сертификатов
+
+    var $sertificatesSlider = $('.education-block .sertificates-block .gallery-content');
+
+    $sertificatesSlider.owlCarousel({
+        items: 1,
+        nav: true,
+        navText: ['', ''],
+        loop: true,
+        mouseDrag: false
+    });
+
 
     // Адативная всплывающая форма
 
