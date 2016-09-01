@@ -128,6 +128,8 @@
   margin-top: 40px;
   flex-shrink: 0;
   margin-bottom: 20px;
+  position: relative;
+
 
   .left-menu-list {
     padding: 0;
@@ -248,8 +250,29 @@
     }
   }
 
+  .shedule-button {
+    position: absolute;
+    left: -4px;
+    top: -104px;
+    width: 270px;
+    border: 4px solid white;
+    background: #231326;
+    padding: 20px 0;
+    background-position: left -90px bottom;
+    box-shadow: @blockShadow;
+    text-align: center;
+
+    a {
+      font-size: 21px;
+      color: #f66459;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
   &.school-page {
-    margin-top: 0;
+    margin-top: 100px;
     align-self: flex-start;
   }
 }
