@@ -3684,6 +3684,13 @@ body {
   display: inline-block;
   vertical-align: top;
 }
+.page-products-item.has-options form {
+  display: none;
+}
+.page-products-item.has-options .page-products-more {
+  margin: 0 auto;
+  display: block;
+}
 .page-products-item form {
   width: 100px;
   display: inline-block;
@@ -3697,7 +3704,18 @@ body {
   color: white;
   height: 32px;
 }
-.shop-page-popup {
+.options-popup {
+  font-size: 40px;
+  text-align: center;
+  position: fixed;
+  left: 0 !important;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 350px;
+}
+.shop-page-popup,
+.options-popup {
   display: none;
   position: fixed;
   top: 20%;
@@ -3706,12 +3724,16 @@ body {
   background: white;
   padding: 25px;
 }
-.shop-page-popup .shop-page-popup-title {
+.shop-page-popup .shop-page-popup-title,
+.options-popup .shop-page-popup-title,
+.shop-page-popup .options-popup-title,
+.options-popup .options-popup-title {
   font-size: 28px;
   text-align: center;
   margin-bottom: 30px;
 }
-.shop-page-popup .shop-page-popup-buttons {
+.shop-page-popup .shop-page-popup-buttons,
+.options-popup .shop-page-popup-buttons {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -3719,17 +3741,20 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.shop-page-popup .shop-page-popup-buttons div {
+.shop-page-popup .shop-page-popup-buttons div,
+.options-popup .shop-page-popup-buttons div {
   padding: 10px;
   border: 1px solid black;
   text-transform: uppercase;
   cursor: pointer;
 }
-.shop-page-popup .shop-page-popup-buttons div a {
+.shop-page-popup .shop-page-popup-buttons div a,
+.options-popup .shop-page-popup-buttons div a {
   color: #000;
   text-decoration: none;
 }
-.shop-page-fade {
+.shop-page-fade,
+.options-fade {
   display: none;
   position: fixed;
   top: 0;
@@ -3862,6 +3887,7 @@ body {
 }
 .product-content .product-content-info-main .product-content-main-item .product-content-main-item-pricing .product-button {
   margin-right: 5px;
+  position: relative;
 }
 .product-content .product-content-info-main .product-content-main-item .product-content-main-item-pricing .product-button button {
   font-size: 16px;
@@ -3871,6 +3897,20 @@ body {
   background: url("../img/button-buy.png") no-repeat;
   width: 100px;
   height: 32px;
+}
+.product-content .product-content-info-main .product-content-main-item .product-content-main-item-pricing .product-button button.is-disabled {
+  opacity: 0.6;
+}
+.product-content .product-content-info-main .product-content-main-item .product-content-main-item-pricing .product-button .buy-special-message {
+  position: absolute;
+  background: white;
+  padding: 20px 40px;
+  text-align: center;
+  font-size: 20px;
+  color: red;
+  display: none;
+  left: 0;
+  top: 0;
 }
 .product-content .product-content-info-main .product-content-main-item .product-content-main-item-pricing .ui-spinner-button.ui-spinner-up {
   position: absolute;

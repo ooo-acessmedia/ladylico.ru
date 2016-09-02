@@ -2,10 +2,6 @@
 
     'use strict';
 
-    var cl = function (msg) {
-        console.log(msg);
-    };
-
     // Слайдер для сертификатов
 
     var $sertificatesSlider = $('.education-block .sertificates-block .gallery-content');
@@ -18,6 +14,30 @@
         mouseDrag: false
     });
 
+    // Main Slider
+    var $mainSlider = $('.main-slider');
+    $mainSlider.owlCarousel({
+        items: 1,
+        autoplay: true
+    });
+
+    var $ourWorksSlider = $('.studio-slider');
+    $ourWorksSlider.owlCarousel({
+        items: 1,
+        autoplay: true,
+        nav: true,
+        navText: ["", ""],
+        loop: true
+    });
+
+    var $ourWorksItem = $('.main-works-slider');
+    $ourWorksItem.owlCarousel({
+        items: 3,
+        margin: 13,
+        nav: true,
+        navText: ["", ""],
+        loop: true
+    });
 
     // Адативная всплывающая форма
 
@@ -95,30 +115,6 @@
             $(this).attr('placeholder', thisPlaceholder);
         });
 
-    // Main Slider
-    var $mainSlider = $('.main-slider');
-    $mainSlider.owlCarousel({
-        items: 1,
-        autoplay: true
-    });
-
-    var $ourWorksSlider = $('.studio-slider');
-    $ourWorksSlider.owlCarousel({
-        items: 1,
-        autoplay: true,
-        nav: true,
-        navText: ["", ""],
-        loop: true
-    });
-
-    var $ourWorksItem = $('.main-works-slider');
-    $ourWorksItem.owlCarousel({
-        items: 3,
-        margin: 13,
-        nav: true,
-        navText: ["", ""],
-        loop: true
-    });
 
     // Сменяющаяся большая картинка у слайдера Работы наших учеников
 
@@ -157,6 +153,265 @@
         maxWidth: '80%',
         maxHeight: '80%'
     });
+
+    //Fancybox videos
+
+    $(".fancybox-video").click(function () {
+        $.fancybox({
+            'padding': 0,
+            'autoScale': false,
+            'transitionIn': 'none',
+            'transitionOut': 'none',
+            'title': this.title,
+            'width': 640,
+            'height': 385,
+            'href': this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
+            'type': 'swf',
+            'swf': {
+                'wmode': 'transparent',
+                'allowfullscreen': 'true'
+            }
+        });
+        return false;
+    });
+
+    // Go up
+
+    $.goup();
+
+    //Left Menu
+
+    var $leftMenuItem = $('.left-menu-list > li');
+
+    $leftMenuItem.find('> a').on('click', function (event) {
+        // event.preventDefault();
+    });
+
+    $leftMenuItem.on('click', function () {
+        //$leftMenuItem.removeClass('active');
+        $(this).toggleClass('active');
+    });
+
+    // Убираем левое меню если оно пустое
+
+    var $leftMenu = $('.m-left-menu');
+
+    if ($leftMenu.find('> *').size() === 0) {
+        $leftMenu.addClass('is-hidden');
+    }
+
+    // Две картинки у плашки товара
+
+    var $pageProductItem = $('.page-products-item');
+
+    $pageProductItem.find('img').each(function () {
+        if ($(this).attr('src') === '') {
+            $(this).remove();
+        }
+    });
+
+    $pageProductItem.each(function () {
+        if ($(this).find('img').size() > 1) {
+            $(this).find('.page-products-img').addClass('double-img');
+        }
+    });
+
+    //Если в с этим товаром покупают пусто - то не выводим этот блок
+
+    if ($relativeProducts.find('.page-products-block .page-products-item').size() === 0) {
+        $relativeProducts.addClass('is-hidden');
+    }
+
+    //Отображение корзины в разных направлениях
+
+    if ($('.ms2_total_count').text() !== "0") {
+        $('#msMiniCart').addClass('not-empty');
+    }
+
+    // Делает одинаковую высоту у блоков
+
+    function setEqualHeight(columns) {
+        var tallestcolumn = 0;
+        columns.each(
+            function () {
+                var currentHeight = $(this).height();
+                if (currentHeight > tallestcolumn) {
+                    tallestcolumn = currentHeight;
+                }
+            }
+        );
+        columns.height(tallestcolumn);
+    }
+
+    setEqualHeight($(".product-content-relative .page-products-item"));
+
+    // Всплывающая подсказка для салона красоты
+
+    $(window).on('scroll', function () {
+        var $helpPopup = $('.help-popup'),
+            $helpClose = $('.help-close');
+
+        if ($(window).scrollTop() >= 550 && $(window).scrollTop() <= 900) {
+            $helpPopup.addClass('form-fade-in').removeClass('form-fade-out');
+
+        } else {
+            $helpPopup.removeClass('form-fade-in').addClass('form-fade-out');
+        }
+
+        $helpClose.on('click', function () {
+            $(this).parents($helpPopup.selector).addClass('is-hidden');
+        });
+    });
+
+    // Не выводим блок с опциями товара если их нет
+
+
+    // Для цвета
+
+    var $productOptions = $('.product-options'),
+        productDataName = $productOptions.find('select > option').eq(0).data();
+
+    if (productDataName) {
+        if (productDataName.name === "undefined") {
+            $productOptions.addClass('is-hidden');
+            $('.product-options-text, .product-options-img').addClass('is-hidden');
+        }
+    }
+
+    // Для изгиба, ширины, длины
+
+    $productOptions.each(function () {
+        if ($(this).find('.block > *').size() === 0) {
+            $(this).addClass('is-hidden');
+        }
+    });
+
+    // Для страницы корзины
+
+    $('.product-cart-options .item').each(function () {
+        if ($(this).find('.block').text() === '') {
+            $(this).addClass('is-hidden');
+        }
+
+    });
+
+    // Анимация флага
+
+    var $headerFlag = $('.header-flag'),
+        $actionPopup = $('.action-popup'),
+        $actionClose = $('.action-close');
+
+    $headerFlag.hover(function () {
+        $actionPopup.addClass('is-visible');
+    }, function () {
+        $actionPopup.removeClass('is-visible');
+    });
+
+    $actionClose.on('click', function () {
+        $actionPopup.removeClass('is-visible');
+    });
+
+    // Выпадающее меню специалисты
+
+    var $specialLink = $('.special-link'),
+        $menuFirstItem = $('.main-nav-list').find('li:first-child');
+
+    $specialLink.appendTo($menuFirstItem);
+
+
+
+
+
+
+
+
+
+
+
+    //------------------Кнопка купить----------------------
+    
+
+    //Всплывающее окно при клике в корзину в категории
+
+    $('.page-products-item button').on('click', function () {
+        $('.shop-page-popup, .shop-page-fade').addClass('is-visible');
+    });
+
+    $('.shop-page-popup-buttons div:nth-child(1)').on('click', function () {
+        $('.shop-page-popup, .shop-page-fade').removeClass('is-visible');
+    });
+
+
+    var $buttonDisabled = $('#add-to-cart-button.is-disabled');
+
+
+    $buttonDisabled.on('click', function (event) {
+        event.preventDefault();
+        $('.options-popup, .options-fade').addClass('is-visible');
+    });
+
+    $('body').on('click', '#add-to-cart-button.is-active', function () {
+        $('.shop-page-popup, .shop-page-fade').addClass('is-visible');
+    });
+
+    $('.options-fade').on('click', function () {
+        $('.options-popup, .options-fade').removeClass('is-visible');
+    });
+
+    //
+
+    $('body').on('click', '.fancybox-buy-button', function () {
+
+        $buttonDisabled.off('click');
+
+        $('#add-to-cart-button').removeClass('is-disabled').addClass('is-active').trigger('click');
+        $.fancybox.close();
+
+        var currentColorName = $(this).data('buy');
+
+        $galleryColorItem.each(function () {
+            if ($(this).find('a').data('color-name') === currentColorName) {
+                $(this).addClass('is-active');
+            }
+        });
+    });
+
+
+    // Изменение количества товара на старнице товара
+
+    var $inputCount = $('.product-quantity input[name="count"]');
+
+    $inputCount.spinner({
+        change: function () {
+            $('.product-button input[name="count"]').val($(this).val());
+        }
+    });
+
+    // При клике на цвета товара - делаем текущий цвет опции minishop2
+
+    var $galleryColorItem = $('.gallery-color-item'),
+        $colorOptions = $('#color-option');
+
+    $galleryColorItem.on('click', function () {
+
+        var currentColorName = $(this).find('a').data('color-name');
+
+        $colorOptions.find('option').each(function () {
+            if ($(this).data('name') === currentColorName) {
+                $(this).prop('selected', 'selected');
+            }
+        });
+
+        var $fancyboxBuyButton = $('<div>Купить</div>').attr('class', 'fancybox-buy-button').attr('data-buy', $(this).find('a').data('color-name'));
+
+        setTimeout(function () {
+            $fancyboxBuyButton.appendTo('.fancybox-inner');
+        }, 300);
+
+    });
+
+
+    
 
     // Страница Школы - Категории
 
@@ -201,118 +456,48 @@
     //    checkActiveItems();
     //});
 
-    // Go up
+    // Страница Школы - Категории
 
-    $.goup();
-
-    //Left Menu
-
-    var $leftMenuItem = $('.left-menu-list > li');
-
-    $leftMenuItem.find('> a').on('click', function (event) {
-        // event.preventDefault();
-    });
-
-    $leftMenuItem.on('click', function () {
-        //$leftMenuItem.removeClass('active');
-        $(this).toggleClass('active');
-    });
-
-    // Две картинки у плашки товара
-
-    var $pageProductItem = $('.page-products-item');
-
-    $pageProductItem.find('img').each(function () {
-        if ($(this).attr('src') === '') {
-            $(this).remove();
-        }
-    });
-
-    $pageProductItem.each(function () {
-        if ($(this).find('img').size() > 1) {
-            $(this).find('.page-products-img').addClass('double-img');
-        }
-    });
-
-    //Всплывающее окно при клике в корзину
-
-    $('.page-products-item button, .product-button').on('click', function () {
-        $('.shop-page-popup, .shop-page-fade').addClass('is-visible');
-    });
-
-    $('.shop-page-popup-buttons div:nth-child(1), .shop-page-fade').on('click', function () {
-        $('.shop-page-popup, .shop-page-fade').removeClass('is-visible');
-    });
-
-    //Если в с этим товаром покупают пусто - то не выводим этот блок
-
-    if ($relativeProducts.find('.page-products-block .page-products-item').size() === 0) {
-        $relativeProducts.addClass('is-hidden');
-    }
-
-    //Отображение корзины в разных направлениях
-
-    if ($('.ms2_total_count').text() !== "0") {
-        $('#msMiniCart').addClass('not-empty');
-    }
-
-
-    //Fancybox videos
-
-    $(".fancybox-video").click(function () {
-        $.fancybox({
-            'padding': 0,
-            'autoScale': false,
-            'transitionIn': 'none',
-            'transitionOut': 'none',
-            'title': this.title,
-            'width': 640,
-            'height': 385,
-            'href': this.href.replace(new RegExp("watch\\?v=", "i"), 'v/'),
-            'type': 'swf',
-            'swf': {
-                'wmode': 'transparent',
-                'allowfullscreen': 'true'
-            }
-        });
-        return false;
-    });
-
-    // Изменение количества товара на старнице товара
-
-    var $inputCount = $('.product-quantity input[name="count"]');
-
-    $inputCount.spinner({
-        change: function () {
-            $('.product-button input[name="count"]').val($(this).val());
-        }
-    });
-
-    // Убираем левое меню если оно пустое
-
-    var $leftMenu = $('.m-left-menu');
-
-    if ($leftMenu.find('> *').size() === 0) {
-        $leftMenu.addClass('is-hidden');
-    }
-
-    // Делает одинаковую высоту у блоков
-
-    function setEqualHeight(columns) {
-        var tallestcolumn = 0;
-        columns.each(
-            function () {
-                var currentHeight = $(this).height();
-                if (currentHeight > tallestcolumn) {
-                    tallestcolumn = currentHeight;
-                }
-            }
-        );
-        columns.height(tallestcolumn);
-    }
-
-    setEqualHeight($(".product-content-relative .page-products-item"));
-
+    //var $schoolCategory = $('.school-page-category');
+    //
+    //$schoolCategory.find('.first').addClass('active');
+    //
+    //var schoolCategoryActiveData = $schoolCategory.find('.active a').data('category');
+    //var $schoolItem = $('.school-item');
+    //
+    //$schoolItem.removeClass('is-visible');
+    //
+    //var schoolCategoryActiveText = $schoolCategory.find('.active a').text();
+    //$('.school-page-main-title').text(schoolCategoryActiveText);
+    //
+    //var checkActiveItems = function () {
+    //    $schoolItem.each(function () {
+    //        var schoolItemData = $(this).find('a').data('category');
+    //        if (schoolItemData === schoolCategoryActiveData) {
+    //            $(this).addClass('is-visible');
+    //        }
+    //    });
+    //};
+    //
+    //checkActiveItems();
+    //
+    //
+    //$schoolCategory.find('li a').on('click', function (event) {
+    //    event.preventDefault();
+    //});
+    //$schoolCategory.find('li').on('click', function () {
+    //    $schoolCategory.find('li').removeClass('active');
+    //    $(this).addClass('active');
+    //
+    //    schoolCategoryActiveData = $schoolCategory.find('.active a').data('category');
+    //    schoolCategoryActiveText = $schoolCategory.find('.active a').text();
+    //    $('.school-page-main-title').text(schoolCategoryActiveText);
+    //
+    //    $schoolItem = $('.school-item');
+    //
+    //    $schoolItem.removeClass('is-visible');
+    //    checkActiveItems();
+    //});
 
     // Смена цветов у товара
 
@@ -327,117 +512,6 @@
     //        }
     //    });
     //});
-
-    // Не выводим блок с опциями товара если их нет
-
-
-    // Для цвета
-
-    var $productOptions = $('.product-options'),
-        productDataName = $productOptions.find('select > option').eq(0).data();
-
-    if (productDataName) {
-        if (productDataName.name === "undefined") {
-            $productOptions.addClass('is-hidden');
-            $('.product-options-text, .product-options-img').addClass('is-hidden');
-        }
-    }
-
-    // Для изгиба, ширины, длины
-
-    $productOptions.each(function () {
-        if ($(this).find('.block > *').size() === 0) {
-            $(this).addClass('is-hidden');
-        }
-    });
-
-    // Для страницы корзины
-
-    $('.product-cart-options .item').each(function () {
-        if ($(this).find('.block').text() === '') {
-            $(this).addClass('is-hidden');
-        }
-
-    });
-
-    // Всплывающая подсказка для салона красоты
-
-    $(window).on('scroll', function () {
-        var $helpPopup = $('.help-popup'),
-            $helpClose = $('.help-close');
-
-        if ($(window).scrollTop() >= 550 && $(window).scrollTop() <= 900) {
-            $helpPopup.addClass('form-fade-in').removeClass('form-fade-out');
-
-        } else {
-            $helpPopup.removeClass('form-fade-in').addClass('form-fade-out');
-        }
-
-        $helpClose.on('click', function () {
-            $(this).parents($helpPopup.selector).addClass('is-hidden');
-        });
-    });
-
-    // При клике на цвета товара - делаем текущий цвет опции minishop2
-
-    var $galleryColorItem = $('.gallery-color-item'),
-        $colorOptions = $('#color-option');
-
-    $galleryColorItem.on('click', function () {
-
-        var currentColorName = $(this).find('a').data('color-name');
-
-        $colorOptions.find('option').each(function () {
-            if ($(this).data('name') === currentColorName) {
-                $(this).prop('selected', 'selected');
-            }
-        });
-
-
-        var $fancyboxBuyButton = $('<div>Купить</div>').attr('class', 'fancybox-buy-button').attr('data-buy', $(this).find('a').data('color-name'));
-
-        setTimeout(function () {
-            $fancyboxBuyButton.appendTo('.fancybox-inner');
-        }, 300);
-
-    });
-
-    $('body').on('click', '.fancybox-buy-button', function () {
-        $('#add-to-cart-button').trigger('click');
-        $.fancybox.close();
-
-        var currentColorName = $(this).data('buy');
-
-        $galleryColorItem.each(function () {
-            if ($(this).find('a').data('color-name') === currentColorName) {
-                $(this).addClass('is-active');
-            }
-        });
-    });
-
-    // Анимация флага
-
-    var $headerFlag = $('.header-flag'),
-        $actionPopup = $('.action-popup'),
-        $actionClose = $('.action-close');
-
-    $headerFlag.hover(function () {
-        $actionPopup.addClass('is-visible');
-    }, function () {
-        $actionPopup.removeClass('is-visible');
-    });
-
-    $actionClose.on('click', function () {
-        $actionPopup.removeClass('is-visible');
-    });
-
-
-    // Выпадающее меню специалисты
-
-    var $specialLink = $('.special-link'),
-        $menuFirstItem = $('.main-nav-list').find('li:first-child');
-
-    $specialLink.appendTo($menuFirstItem);
 
 
 })(jQuery);
