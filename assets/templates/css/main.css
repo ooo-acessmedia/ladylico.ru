@@ -4730,11 +4730,11 @@ body {
           align-self: flex-start;
 }
 .breadcrumbs a {
-  font-size: 16px;
+  font-size: 19px;
   color: #000;
 }
 .breadcrumbs span {
-  font-size: 16px;
+  font-size: 19px;
   color: #8b3139;
 }
 /*----------FRONT TABS----------*/
