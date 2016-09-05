@@ -319,17 +319,8 @@
     $specialLink.appendTo($menuFirstItem);
 
 
-
-
-
-
-
-
-
-
-
     //------------------Кнопка купить----------------------
-    
+
 
     //Всплывающее окно при клике в корзину в категории
 
@@ -340,6 +331,9 @@
     $('.shop-page-popup-buttons div:nth-child(1)').on('click', function () {
         $('.shop-page-popup, .shop-page-fade').removeClass('is-visible');
     });
+
+    $('.has-options button').addClass('is-disabled');
+    $('.no-options button').addClass('is-active');
 
 
     var $buttonDisabled = $('#add-to-cart-button.is-disabled');
@@ -410,8 +404,6 @@
 
     });
 
-
-    
 
     // Страница Школы - Категории
 
