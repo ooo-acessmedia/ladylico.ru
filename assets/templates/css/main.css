@@ -5354,6 +5354,22 @@ body {
 .studio-special-output .specialist-block .specialist-item .right {
   width: 180px !important;
 }
+.feedback-item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 30px;
+}
+.feedback-item .left {
+  margin-right: 30px;
+}
+.feedback-item .right .title {
+  font-size: 20px;
+  font-weight: bold;
+}
 /*Modules*/
 /*States*/
 .is-visible {
