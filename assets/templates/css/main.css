@@ -4086,6 +4086,21 @@ body {
 .gallery-teaser-item:hover {
   opacity: 0.7;
 }
+.gl-content {
+  padding: 10px;
+  border: 5px solid #8e8e8e;
+  border-radius: 20px 20px 20px 20px;
+  margin-bottom: 25px;
+}
+.gallery-teaser-item {
+  text-align: center;
+  margin: 24px;
+  width: 190px;
+}
+.content-gallery-item {
+  margin: 24px;
+  width: 190px;
+}
 /*Layout*/
 .form-placeholders::-webkit-input-placeholder {
   color: #41b4f1;
