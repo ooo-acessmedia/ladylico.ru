@@ -186,11 +186,12 @@
             padding: 10px 0;
 
             &.active {
-
-              > a, > span {
+                > a, > span {
                 background: rgba(244, 146, 2, 0.4);
-              }
-
+                }
+                > ul {
+                    display: block;
+                }
             }
 
             > a, > span {
@@ -207,7 +208,7 @@
             > ul {
               list-style: none;
               padding-left: 0;
-
+                display: none; 
               > li {
                 > a, > span {
                   display: block;

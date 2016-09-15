@@ -3584,6 +3584,9 @@ body {
   background: url("../img/button-next.png") no-repeat;
   background-size: 100% 100%;
 }
+.page-submenu {
+  margin-top: 20px;
+}
 .page-category-block {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -4703,6 +4706,9 @@ body {
 .m-left-menu .left-menu-list > li.active > ul > li.active > span {
   background: rgba(244, 146, 2, 0.4);
 }
+.m-left-menu .left-menu-list > li.active > ul > li.active > ul {
+  display: block;
+}
 .m-left-menu .left-menu-list > li.active > ul > li > a,
 .m-left-menu .left-menu-list > li.active > ul > li > span {
   display: block;
@@ -4717,6 +4723,7 @@ body {
 .m-left-menu .left-menu-list > li.active > ul > li > ul {
   list-style: none;
   padding-left: 0;
+  display: none;
 }
 .m-left-menu .left-menu-list > li.active > ul > li > ul > li > a,
 .m-left-menu .left-menu-list > li.active > ul > li > ul > li > span {
