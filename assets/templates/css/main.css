@@ -3264,6 +3264,7 @@ body {
 .template-07 .main-content-wrap {
   background: url("../img/bg-school-page-content.jpg");
   background-size: 100%;
+  background-repeat: no-repeat;
   /*@media screen and (max-width: 1199px) {
       background: none;
     }*/
