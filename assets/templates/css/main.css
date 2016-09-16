@@ -3395,6 +3395,7 @@ body {
 }
 .school-page-content .text {
   font-size: 18px;
+  padding: 10px;
 }
 .school-page-block {
   display: -webkit-flex;
