@@ -3483,6 +3483,9 @@ body {
   padding-top: 10px;
   padding-right: 20px;
 }
+.school-page-block .school-page-main .school-page-main-title > h1 {
+  margin: 0;
+}
 .school-page-block .school-page-main .school-page-main-items {
   display: -webkit-flex;
   display: -ms-flexbox;
