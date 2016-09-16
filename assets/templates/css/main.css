@@ -3497,6 +3497,9 @@ body {
         justify-content: center;
       }*/
 }
+.school-page-block .school-page-main .school-page-main-items .category-content:last-child {
+  width: 77%;
+}
 .school-page-block .school-page-main .school-page-main-items .school-category-item {
   float: left;
   width: 200px;
@@ -3504,6 +3507,9 @@ body {
 }
 .school-page-block .school-page-main .school-page-main-items .school-category-item .page-school-img {
   width: 191px;
+}
+.school-page-block .school-page-main .school-page-main-items .school-category-item:hover {
+  background: rgba(255, 201, 210, 0.4);
 }
 .school-page-block .school-page-main .school-page-main-items .school-item {
   margin-bottom: 25px;
@@ -3733,6 +3739,7 @@ body {
 }
 .page-products-category-item .category-content {
   margin: 10px;
+  height: 101px;
 }
 .page-products-category-item .page-products-category-img {
   width: 100px;
@@ -3748,6 +3755,13 @@ body {
 }
 .page-products-category-item .page-products-category-item-title {
   font-weight: 700;
+}
+.page-products-category-item .page-products-category-item-title,
+.page-products-category-item .page-produts-category-item-introtext {
+  font-size: 18px;
+}
+.page-products-category-item:hover {
+  background: rgba(255, 201, 210, 0.4);
 }
 .options-popup {
   font-size: 40px;
