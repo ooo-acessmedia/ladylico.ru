@@ -4076,14 +4076,16 @@ body {
   font-weight: normal;
   border: 4px solid white;
 }
-.school-direction .gl-content .gallery-content-title a {
-  margin-bottom: -10px;
+.school-direction .gl-content .gallery-content-title .title {
   font-size: 24px;
   font-weight: bold;
   color: #ff18c8;
   text-align: center;
 }
-.school-direction .gl-content .gallery-content-title a:hover {
+.school-direction .gl-content .link {
+  text-align: center;
+}
+.school-direction .gl-content .link:hover {
   border: none;
   text-decoration: underline;
 }
