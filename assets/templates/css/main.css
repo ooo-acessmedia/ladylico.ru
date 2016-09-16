@@ -3394,6 +3394,7 @@ body {
   padding-bottom: 90px;
 }
 .school-page-content .text {
+  clear: both;
   font-size: 18px;
   padding: 10px;
 }
@@ -3490,20 +3491,19 @@ body {
   margin: 0;
 }
 .school-page-block .school-page-main .school-page-main-items {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-flex-flow: wrap row;
-      -ms-flex-flow: wrap row;
-          flex-flow: wrap row;
   padding: 30px 35px;
   padding-bottom: 0;
   /*@media screen and (max-width: 690px) {
         justify-content: center;
       }*/
+}
+.school-page-block .school-page-main .school-page-main-items .school-category-item {
+  float: left;
+  width: 200px;
+  margin-right: 5px;
+}
+.school-page-block .school-page-main .school-page-main-items .school-category-item .page-school-img {
+  width: 191px;
 }
 .school-page-block .school-page-main .school-page-main-items .school-item {
   margin-bottom: 25px;
@@ -3713,6 +3713,12 @@ body {
   font-size: 16px;
   color: white;
   height: 32px;
+}
+.page-products-category-item::before,
+.page-products-category-item::after {
+  content: " ";
+  display: table;
+  clear: both;
 }
 .page-products-category-item {
   width: 100%;

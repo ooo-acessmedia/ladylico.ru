@@ -170,6 +170,7 @@
   padding-bottom: 90px;
 
   .text {
+      clear: both;
     font-size: 18px;
     padding: 10px;
   }
@@ -292,15 +293,27 @@
     }
 
     .school-page-main-items {
-      display: flex;
-      justify-content: space-between;
-      flex-flow: wrap row;
+//      display: flex;
+//      justify-content: space-between;
+//      flex-flow: wrap row;
       padding: 30px 35px;
       padding-bottom: 0;
 
       /*@media screen and (max-width: 690px) {
         justify-content: center;
       }*/
+        
+        .school-category-item {
+            float: left;
+            width: 200px;
+            margin-right: 5px;
+            
+            .page-school-img {
+                width: 191px;
+            }
+          }
+        
+        
 
       .school-item {
         margin-bottom: 25px;
@@ -520,6 +533,12 @@
       height: 32px;
     }
   }
+}
+
+.page-products-category-item::before, .page-products-category-item::after {
+    content: " ";
+    display: table;
+    clear: both;
 }
 
 .page-products-category-item {
