@@ -405,6 +405,18 @@
     });
 
 
+    // Школа - ссылки на посты
+    var linkPrev = $('.neighbors .link-prev');
+    var linkNext = $('.neighbors .link-next');
+    if (linkPrev.length > 1 || linkNext > 1) {
+        linkPrev.show();
+        linkNext.show();
+    } else {
+        linkPrev.hide();
+        linkNext.hide();
+    }
+
+
     // Страница Школы - Категории
 
     //var $schoolCategory = $('.school-page-category');
