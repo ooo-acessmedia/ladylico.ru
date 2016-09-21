@@ -5257,7 +5257,7 @@ body {
   border-top: none;
 }
 .special-output .education-block .course-list {
-  width: 545px;
+  width: 640px;
   padding: 10px 0;
 }
 .special-output .education-block .course-list li {
@@ -5267,13 +5267,13 @@ body {
 .special-output .education-block .course-list ul {
   padding: 0;
   margin: 0;
-  list-style-position: inside;
+  list-style-position: outside;
+  padding-left: 15px;
   margin-left: 30px;
 }
 .special-output .education-block .sertificates-block {
-  width: 435px;
+  width: 340px;
   padding-top: 15px;
-  padding-left: 60px;
   position: relative;
 }
 .special-output .education-block .sertificates-block .owl-prev {
@@ -5286,7 +5286,7 @@ body {
 }
 .special-output .education-block .sertificates-block .owl-next {
   position: absolute;
-  right: 60px;
+  right: 25px;
   top: 75px;
   width: 30px;
   height: 35px;
@@ -5294,6 +5294,7 @@ body {
 }
 .special-output .education-block .sertificates-block .gallery-teaser-item {
   width: auto;
+  margin: 10px 0;
 }
 .special-output .education-block .sertificates-block .gallery-teaser-item img {
   width: auto;
